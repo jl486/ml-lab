@@ -1,0 +1,27 @@
+#root {
+  margin: 0;
+  padding: 0;
+}
+
+::selection {
+  background-color: var(--color-selection);
+  color: var(--color-foreground)
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply scroll-pt-28 scroll-auto;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  pre {
+    @apply !bg-code-background no-scrollbar min-w-0 overflow-x-auto;
+  }
+}

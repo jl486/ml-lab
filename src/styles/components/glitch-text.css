@@ -1,0 +1,75 @@
+.glitch-text {
+  position: relative;
+  line-height: 1;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 1s steps(18, end) forwards, glitch 1s linear infinite;
+  animation-delay: 0.5s, 0s;
+}
+
+@keyframes glitch {
+  2%, 64% {
+    transform: translate(2px. 0);
+  }
+  4%, 60% {
+    transform: translate(-1px, 0);
+  }
+  62% {
+    transform: translate(0, 0);
+  }
+}
+
+.glitch-text::before, .glitch-text::after {
+  content: attr(title);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  color: inherit;
+  overflow: hidden;
+}
+
+.glitch-text::before {
+  animation: glitch-top 2s linear infinite;
+  color: magenta;
+  z-index: -1;
+  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+@keyframes glitch-top {
+  2%, 64% {
+    transform: translate(-4px, -2px);
+  }
+  4%, 60% {
+    transform: translate(0, 0);
+  }
+  62% {
+    transform: translate(20px, -1px) skew(-10deg);
+  }
+}
+
+.glitch-text::after {
+  animation: glitch-bottom 1.25s linear infinite;
+  color: cyan;
+  z-index: -1;
+  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+@keyframes glitch-bottom {
+  2%, 64% {
+    transform: translate(-4px, 0);
+  }
+  4%, 60% {
+    transform: translate(0, 0);
+  }
+  62% {
+    transform: translate(-2px, 1px) skew(20deg);
+  }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 18ch; }
+}

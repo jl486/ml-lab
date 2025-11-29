@@ -1,0 +1,15 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@plugin "@tailwindcss/typography";
+
+@import "./base/fonts.css";
+@import "./base/resets.css";
+
+@import "./theme/colors.css";
+
+@import "./util/animations.css";
+@import "./util/custom.css";
+
+@import "./components/glitch-text.css";
+@import "./components/mdx.css";

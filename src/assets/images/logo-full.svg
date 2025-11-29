@@ -1,0 +1,25 @@
+<svg
+  viewBox="0 0 500 100"
+  width="500"
+  height="100"
+  fill="currentColor"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M 57.72672,0.0175402 0,100 H 20.294686 L 57.72672,35.186813 64.743029,47.325031 74.881605,29.749164 Z M 106.68304,1e-7 48.938787,100 H 164.39217 L 124.1712,30.345559 114.03263,47.92141 133.94142,82.424135 H 79.372041 L 97.561835,50.920893 106.6655,35.169265 116.82161,17.593405 Z"
+    style="stroke-width:1.75402"
+  />
+  <text
+    x="211.51488"
+    y="87.076241"
+    font-family="Inter, sans-serif"
+    font-weight="600"
+    font-size="103.52px"
+    letter-spacing="-1.56422"
+    fill="currentColor"
+    style="stroke-width:1.6175"
+  >
+    ml lab
+  </text>
+</svg>
+
