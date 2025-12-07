@@ -53,5 +53,8 @@ export default defineConfig({
   },
   server: {
     port: 8000,
+    fs: {
+      allow: ["..", "content"]
+    }
   }
 });

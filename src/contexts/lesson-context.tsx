@@ -6,7 +6,6 @@ const LessonContext = React.createContext<{
   id?: string;
   name?: string;
   description?: string;
-  sectionName?: string
   Comp?: React.ComponentType;
 }>({});
 
@@ -14,7 +13,6 @@ interface LessonProviderProps {
   id: string | undefined;
   children: React.ReactNode;
 }
-
 
 export function LessonProvider({ id, children }: LessonProviderProps) {
   const lesson = useMemo(() => {
@@ -26,7 +24,6 @@ export function LessonProvider({ id, children }: LessonProviderProps) {
       id,
       name: lesson?.name,
       description: lesson?.description,
-      sectionName: lesson?.sectionName,
       Comp: lesson?.Comp
     }}>
       {children}

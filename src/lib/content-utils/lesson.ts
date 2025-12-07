@@ -1,5 +1,7 @@
 import { getCourse } from "./course";
 
+const files = import.meta.glob("/content/courses/**/*.mdx", { eager: true }) as LessonRecord;
+
 type LessonRecord = Record<
   string,
   {
@@ -8,32 +10,28 @@ type LessonRecord = Record<
       id: string,
       name: string,
       description: string,
-      sectionName: string
     };
   }
 >;
 
-const files = import.meta.glob("/content/courses/**/*.mdx", { eager: true }) as LessonRecord;
 
 export function getLessons() {
-  return Object.entries(files).map(([, mod]) => {
-    const frontmatter = mod.frontmatter ?? {};
-    return {
-      Comp: mod.default,
-      id: frontmatter.id,
-      name: frontmatter.name,
-      description: frontmatter.description,
-      sectionName: frontmatter.sectionName
-    };
-  });
+  return Object.entries(files)
+    .filter(([path]) => !path.endsWith("course.mdx"))
+    .map(([, mod]) => {
+      const frontmatter = mod.frontmatter ?? {};
+      return {
+        Comp: mod.default,
+        id: frontmatter.id,
+        name: frontmatter.name,
+        description: frontmatter.description,
+      };
+    });
 }
 
 export function getLessonsInCourse(courseId: string | undefined) {
   const course = getCourse(courseId);
-
-  if (!course) {
-    return [];
-  }
+  if (!course) return [];
 
   return course.sections.flatMap((section) =>
     section.lessons.map((lesson) => ({

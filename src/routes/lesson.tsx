@@ -42,9 +42,6 @@ function LessonContent() {
       <title>{lesson.name}</title>
       <MDXProvider components={components}>
         <ContentLayout>
-          <p className="text-accent text-sm font-medium">
-            {lesson.sectionName}
-          </p>
           <h1 className="text-4xl mb-2 font-bold font-serif text-foreground">
             {lesson.name}
           </h1>
